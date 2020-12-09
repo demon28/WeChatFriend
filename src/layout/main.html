@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- head 中 -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>H5 网页示例</title>
+</head>
+<body style="margin-left: 10px;margin-right: 10px">
+
+
+<div class="row">
+    第一步：通讯录
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_1" value="400"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_1" value="2061"  style="width:40%"  />  </div>
+    </div>
+</div>
+<div class="row">
+    第二步：新的朋友
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_2" value="506"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_2" value="337"  style="width:40%"  />  </div>
+    </div>
+</div>
+
+
+<div class="row">
+    第三步：锁定接受
+</div>
+<div class="row">
+    第四步：完成
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_4" value="1000"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_4" value="150"  style="width:40%"  />  </div>
+    </div>
+</div>
+
+<div class="row">
+    第五步：锁定发消息
+</div>
+
+
+<div class="row">
+    第六步：锁定更多
+</div>
+
+<div class="row">
+    第七步：我的收藏
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_7" value="921"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_7" value="1836"  style="width:40%"  />  </div>
+    </div>
+</div>
+
+<div class="row">
+    第八步：选择消息位置
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_8" value="630"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_8" value="1846"  style="width:40%"  />  </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    第九步：发送
+    <br/>
+    <div class="row" style="width:100%">
+
+        <div class="col s6"> X:<input type="text" id="btn_x_9" value="872"  style="width:40%" />  </div>
+        <div class="col s6">  Y:<input type="text" id="btn_y_9" value="1471"  style="width:40%"  />  </div>
+    </div>
+</div>
+
+
+
+<br/>
+<br/>
+<div class="row">
+
+    <div class="col s6">
+        <button class="btn waves-effect waves-light " type="button" name="action" onclick="Stop()">停止脚本
+        </button>
+    </div>
+    <div class="col s6">
+        <button class="btn waves-effect waves-light" type="button" name="action" onclick="Start()">
+            启动脚本
+        </button>
+    </div>
+</div>
+<script src="htmljs/jquery.min.js"></script>
+<script src="htmljs/materialize.min.js"></script>
+
+
+</body>
+
+
+<script>
+
+    function Start() {
+
+       var model={};
+
+        var btn_x_1=$("#btn_x_1").val();
+        var btn_y_1=$("#btn_y_1").val();
+
+
+         var btn_x_2=$("#btn_x_2").val();
+         var btn_y_2=$("#btn_y_2").val();
+
+
+          var btn_x_4=$("#btn_x_4").val();
+         var btn_y_4=$("#btn_y_4").val();
+
+
+          var btn_x_7=$("#btn_x_7").val();
+         var btn_y_7=$("#btn_y_7").val();
+
+          var btn_x_8=$("#btn_x_8").val();
+         var btn_y_8=$("#btn_y_8").val();
+
+          var btn_x_9=$("#btn_x_9").val();
+         var btn_y_9=$("#btn_y_9").val();
+
+
+
+
+        window.ec.saveConfig("btn_x_1",btn_x_1);
+        window.ec.saveConfig("btn_y_1",btn_y_1);
+
+        window.ec.saveConfig("btn_x_2",btn_x_2);
+        window.ec.saveConfig("btn_y_2",btn_y_2);
+
+        window.ec.saveConfig("btn_x_4",btn_x_4);
+        window.ec.saveConfig("btn_y_4",btn_y_4);
+
+
+        window.ec.saveConfig("btn_x_7",btn_x_7);
+        window.ec.saveConfig("btn_y_7",btn_y_7);
+
+        window.ec.saveConfig("btn_x_8",btn_x_8);
+        window.ec.saveConfig("btn_y_8",btn_y_8);
+
+        window.ec.saveConfig("btn_x_9",btn_x_9);
+        window.ec.saveConfig("btn_y_9",btn_y_9);
+
+        window.ec.start();
+        window.ec.toast("开始脚本");
+
+    }
+
+    function Stop(){
+        window.ec.stopTask();
+    }
+
+</script>
+</html>
