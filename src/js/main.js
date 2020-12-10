@@ -26,6 +26,10 @@ var wrongcount=0;
 var data;
 
 function main() {
+
+
+
+
     data=JSON.parse(ui.getConfigJSON());
     ui.logd("打印一下json"+ui.getConfigJSON());
 
@@ -39,6 +43,9 @@ function main() {
 
 
     to_tongxunlu(); //第一步通讯录
+
+
+
 
     to_newfriedn(); //第二步 新的朋友
 
@@ -74,8 +81,15 @@ function  ClickStar() {
             click(item);  //第三步接受
             sleep(4000);
 
-            clickPoint(data.btn_x_4,data.btn_y_4);  //第四步完成
+            // clickPoint(data.btn_x_4,data.btn_y_4);  //第四步完成
+            // sleep(6000);
+
+            var wancheng= clz("android.widget.Button").depth(10).text("完成");
+            click(wancheng);  //第四步完成
             sleep(6000);
+
+
+
 
             var faxiaoxi= id("com.tencent.mm:id/g6f").clz("android.widget.TextView").depth(13).text("发消息");
             click(faxiaoxi); //第五步 发消息
@@ -83,16 +97,25 @@ function  ClickStar() {
 
             var imgbtn_gengduo= clz("android.widget.ImageButton").desc("更多功能按钮，已折叠");
             click(imgbtn_gengduo); //第六步更多
-            sleep(2000);
+            sleep(3000);
 
-            clickPoint(data.btn_x_7,data.btn_y_7);  //第四步完成 //第七步我的收藏
-            sleep(2000);
+            // clickPoint(data.btn_x_7,data.btn_y_7);  //第四步完成 //第七步我的收藏
+            // sleep(2000);
+
+
+            var shoucang= text("我的收藏");
+            click(shoucang);  //第四步我的收藏
+            sleep(3000);
 
             clickPoint(data.btn_x_8,data.btn_y_8);  //第八步选择消息位置
             sleep(2000);
 
-            ui.logd(data.btn_x_9+"===最后发送消息===="+data.btn_y_9);
-            clickPoint(data.btn_x_9,data.btn_y_9);  //第九步我的发送
+            // ui.logd(data.btn_x_9+"===最后发送消息===="+data.btn_y_9);
+            // clickPoint(data.btn_x_9,data.btn_y_9);  //第九步我的发送
+
+            var fasong= clz("android.widget.Button").depth(7).text("发送");
+            click(fasong);  //第九步 发送
+
             sleep(2000);
 
             back();
@@ -154,8 +177,12 @@ function to_tongxunlu() {
 
 
 
-    logd("为什么获取不到："+data);
-    clickPoint(data.btn_x_1,data.btn_y_1);
+    //logd("为什么获取不到："+data);
+
+    var selector = clz("android.widget.TextView").depth(12).text("通讯录");
+    click(selector);
+
+   // clickPoint(data.btn_x_1,data.btn_y_1);
 
     sleep(2000);
 
